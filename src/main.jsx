@@ -9,11 +9,13 @@ import Footer from './components/Footer'
 import Books from './components/Books'
 import Book from './components/Book'
 import BookDetails from './components/BookDetails'
+import ErrorPage from './components/ErrorPage'
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App></App>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',

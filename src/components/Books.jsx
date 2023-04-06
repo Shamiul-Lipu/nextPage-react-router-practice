@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLoaderData, useNavigation } from 'react-router-dom'
 import Book from './Book'
+import LoadingSpinner from './LoadingSpinner'
 // import LoadingSpinner from './LoadingSpinner'
 
 const Books = () => {
@@ -12,11 +13,11 @@ const Books = () => {
     //       .then(data => console.log(data))
     //   }, [])
 
-    // const navigation = useNavigation()
-    // console.log(navigation.state)
-    // if (navigation.state === 'loading') {
-    //     return <LoadingSpinner />
-    // }
+    const navigation = useNavigation()
+    console.log(navigation.state)
+    if (navigation.state === 'loading') {
+        return <LoadingSpinner />
+    }
 
     const { books } = useLoaderData()
     console.log(books)
